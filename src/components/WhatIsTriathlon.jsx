@@ -4,19 +4,19 @@
 const LEGS = [
   {
     label: 'Swim',
-    emoji: '🏊',
+    image: '/swim.jpg',
     description:
       'The first leg. Races begin in open water or a pool. Athletes pace themselves to conserve energy for what follows.',
   },
   {
     label: 'Bike',
-    emoji: '🚴',
+    image: '/bike.jpg',
     description:
       'The longest leg by time. Cyclists push hard on the road course before transitioning to the final discipline.',
   },
   {
     label: 'Run',
-    emoji: '🏃',
+    image: '/run.jpg',
     description:
       'The final leg. Athletes dig deep on fatigued legs to cross the finish line — the defining moment of every race.',
   },
@@ -46,10 +46,23 @@ const RACE_TYPES = [
 // A single discipline card (used in "The Three Legs")
 function LegCard({ leg }) {
   return (
-    <div className="bg-white border border-gray-100 p-8 flex flex-col gap-3 hover:shadow-md hover:border-red-200 transition-all duration-200">
-      <span className="text-4xl">{leg.emoji}</span>
-      <h3 className="text-xl font-black uppercase text-black">{leg.label}</h3>
-      <p className="text-gray-600 text-sm leading-relaxed">{leg.description}</p>
+    <div className="bg-white border border-gray-100 flex flex-col hover:shadow-md hover:border-red-200 transition-all duration-200 overflow-hidden">
+      {/* Image with fade-out at the bottom */}
+      <div className="relative h-52">
+        <img
+          src={leg.image}
+          alt={leg.label}
+          className="w-full h-full object-cover"
+        />
+        {/* Gradient fades the photo into the white card body */}
+        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent" />
+      </div>
+
+      {/* Card text content */}
+      <div className="px-8 pb-8 flex flex-col gap-3">
+        <h3 className="text-xl font-black uppercase text-black">{leg.label}</h3>
+        <p className="text-gray-600 text-sm leading-relaxed">{leg.description}</p>
+      </div>
     </div>
   )
 }

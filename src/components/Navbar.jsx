@@ -31,7 +31,7 @@ export default function Navbar() {
           <img
             src="/logo.jpg"
             alt="Miami University Triathlon Club"
-            className="h-10 w-10 object-contain rounded-sm"
+            className="h-20 w-20 object-contain rounded-sm"
           />
           <span className="text-black font-bold text-base tracking-tight leading-tight text-left">
             <span className="text-red-700">Miami University</span>
