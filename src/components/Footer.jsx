@@ -1,11 +1,4 @@
-// Footer — contact info, navigation, and social links
-const SOCIAL_LINKS = [
-  { label: 'Instagram', href: '#', icon: 'IG' },
-  { label: 'Twitter / X', href: '#', icon: 'X' },
-  { label: 'Facebook', href: '#', icon: 'FB' },
-  { label: 'Strava', href: '#', icon: 'ST' },
-]
-
+// Footer — contact info, navigation, and Instagram link
 const QUICK_LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
@@ -34,19 +27,32 @@ export default function Footer() {
               A student-run triathlon club at Miami University in Oxford, Ohio.
               Competing in swim, bike, and run — together.
             </p>
-            {/* Social icons */}
-            <div className="flex gap-3">
-              {SOCIAL_LINKS.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  className="w-9 h-9 bg-gray-800 hover:bg-red-700 flex items-center justify-center text-xs font-bold transition-colors duration-200"
-                >
-                  {s.icon}
-                </a>
-              ))}
-            </div>
+            {/* Instagram link */}
+            <a
+              href="https://www.instagram.com/mu_triathlon/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Instagram"
+              className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors duration-200 group"
+            >
+              {/* Instagram SVG icon */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-5 h-5 group-hover:stroke-red-500 transition-colors duration-200"
+                aria-hidden="true"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+              </svg>
+              Follow us on Instagram
+            </a>
           </div>
 
           {/* Quick links */}

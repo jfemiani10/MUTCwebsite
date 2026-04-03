@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import AboutPreview from './components/AboutPreview'
+import PracticeSchedule from './components/PracticeSchedule'
 import Events from './components/Events'
 import Footer from './components/Footer'
 
@@ -11,6 +12,7 @@ function App() {
       <main>
         <Hero />
         <AboutPreview />
+        <PracticeSchedule />
         <Events />
       </main>
       <Footer />
