@@ -33,11 +33,10 @@ export default function Navbar() {
             alt="Miami University Triathlon Club"
             className="h-10 w-10 object-contain rounded-sm"
           />
-          <span className="text-red-700 font-black text-xl tracking-tight uppercase leading-none">
-            Miami
-          </span>
-          <span className="text-black font-semibold text-xl tracking-tight uppercase leading-none">
-            Triathlon
+          <span className="text-black font-bold text-base tracking-tight leading-tight text-left">
+            <span className="text-red-700">Miami University</span>
+            <br />
+            Triathlon Club
           </span>
         </button>
 
