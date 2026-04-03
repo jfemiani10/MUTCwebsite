@@ -1,19 +1,20 @@
 // WhatIsTriathlon — explains the sport for newcomers
+import { asset } from '../utils/asset'
 
 const LEGS = [
   {
     label: 'Swim',
-    image: '/swim.jpg',
+    image: asset('swim.jpg'),
     description: 'The first leg. Races begin in open water or a pool. Athletes pace themselves to conserve energy for what follows.',
   },
   {
     label: 'Bike',
-    image: '/bike.jpg',
+    image: asset('bike.jpg'),
     description: 'The longest leg by time. Cyclists push hard on the road course before transitioning to the final discipline.',
   },
   {
     label: 'Run',
-    image: '/run.jpg',
+    image: asset('run.jpg'),
     description: 'The final leg. Athletes dig deep on fatigued legs to cross the finish line — the defining moment of every race.',
   },
 ]
