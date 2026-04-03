@@ -1,117 +1,109 @@
 // WhatIsTriathlon — explains the sport for newcomers
-// Two subsections: The Three Legs and Race Types
 
 const LEGS = [
   {
     label: 'Swim',
     image: '/swim.jpg',
-    description:
-      'The first leg. Races begin in open water or a pool. Athletes pace themselves to conserve energy for what follows.',
+    description: 'The first leg. Races begin in open water or a pool. Athletes pace themselves to conserve energy for what follows.',
   },
   {
     label: 'Bike',
     image: '/bike.jpg',
-    description:
-      'The longest leg by time. Cyclists push hard on the road course before transitioning to the final discipline.',
+    description: 'The longest leg by time. Cyclists push hard on the road course before transitioning to the final discipline.',
   },
   {
     label: 'Run',
     image: '/run.jpg',
-    description:
-      'The final leg. Athletes dig deep on fatigued legs to cross the finish line — the defining moment of every race.',
+    description: 'The final leg. Athletes dig deep on fatigued legs to cross the finish line — the defining moment of every race.',
   },
 ]
 
 const RACE_TYPES = [
   {
+    num: '01',
     name: 'Sprint',
-    distances: '750m Swim · 20km Bike · 5km Run',
-    description:
-      'The most beginner-friendly format. Fast, exciting, and a great entry point into the sport.',
+    distances: '750m swim · 20km bike · 5km run',
+    description: 'The most beginner-friendly format. Fast, exciting, and the perfect entry point into the sport.',
   },
   {
+    num: '02',
     name: 'Draft-Legal Sprint',
-    distances: '750m Swim · 20km Bike · 5km Run',
-    description:
-      'Same distances as a Sprint, but cyclists are allowed to draft — making pack tactics and speed critical.',
+    distances: '750m swim · 20km bike · 5km run',
+    description: 'Same distances as Sprint, but cyclists can draft — pack tactics and raw speed become decisive.',
   },
   {
+    num: '03',
     name: 'Olympic',
-    distances: '1500m Swim · 40km Bike · 10km Run',
-    description:
-      'The classic distance. Double the Sprint, this format rewards endurance and consistent pacing.',
+    distances: '1500m swim · 40km bike · 10km run',
+    description: 'The classic distance. Double the Sprint, this format rewards endurance and consistent pacing over every leg.',
   },
 ]
 
-// A single discipline card (used in "The Three Legs")
 function LegCard({ leg }) {
   return (
-    <div className="bg-white border border-gray-100 flex flex-col hover:shadow-md hover:border-red-200 transition-all duration-200 overflow-hidden">
-      {/* Image with fade-out at the bottom */}
-      <div className="relative h-52">
+    <div className="group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300">
+      {/* Photo */}
+      <div className="relative h-64 overflow-hidden">
         <img
           src={leg.image}
           alt={leg.label}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        {/* Gradient fades the photo into the white card body */}
-        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent" />
+        {/* Fade into card body */}
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent" />
+        {/* Label overlay */}
+        <div className="absolute bottom-4 left-6">
+          <h3 className="text-2xl font-black uppercase text-gray-900 tracking-tight">{leg.label}</h3>
+        </div>
       </div>
-
-      {/* Card text content */}
-      <div className="px-8 pb-8 flex flex-col gap-3">
-        <h3 className="text-xl font-black uppercase text-black">{leg.label}</h3>
-        <p className="text-gray-600 text-sm leading-relaxed">{leg.description}</p>
+      {/* Body */}
+      <div className="px-6 pb-8 pt-2">
+        <p className="text-gray-500 text-sm leading-relaxed">{leg.description}</p>
       </div>
+      {/* Red bottom accent on hover */}
+      <div className="h-0.5 bg-red-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
     </div>
   )
 }
 
-// A single race type card (used in "Race Types")
 function RaceCard({ race }) {
   return (
-    <div className="bg-gray-50 border-t-4 border-red-700 p-8 flex flex-col gap-3">
-      <h3 className="text-xl font-black uppercase text-black">{race.name}</h3>
-      <p className="text-red-700 text-xs font-bold uppercase tracking-wider">{race.distances}</p>
-      <p className="text-gray-600 text-sm leading-relaxed">{race.description}</p>
+    <div className="relative bg-white border border-gray-100 p-8 hover:border-red-200 hover:shadow-md transition-all duration-200">
+      {/* Number watermark */}
+      <span className="absolute top-4 right-6 text-5xl font-black text-gray-100 leading-none select-none">
+        {race.num}
+      </span>
+      <h3 className="text-lg font-black uppercase text-gray-900 mb-2 tracking-tight">{race.name}</h3>
+      <p className="text-red-600 text-xs font-bold uppercase tracking-wider mb-4">{race.distances}</p>
+      <p className="text-gray-500 text-sm leading-relaxed">{race.description}</p>
     </div>
   )
 }
 
 export default function WhatIsTriathlon() {
   return (
-    <section id="what-is-triathlon" className="py-24 bg-gray-200">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="what-is-triathlon" className="py-32 bg-white">
+      <div className="max-w-6xl mx-auto px-8">
 
-        {/* Section header */}
+        {/* Header */}
         <div className="flex items-center gap-4 mb-4">
-          <div className="w-10 h-1 bg-red-700" />
-          <span className="text-red-700 text-sm font-bold uppercase tracking-widest">
-            The Sport
-          </span>
+          <div className="w-8 h-px bg-red-600" />
+          <span className="text-red-600 text-xs font-bold uppercase tracking-[.2em]">The Sport</span>
         </div>
-        <h2 className="text-4xl font-black text-black uppercase leading-tight mb-16">
-          What is a <span className="text-red-700">Triathlon?</span>
+        <h2 className="text-5xl font-black text-gray-900 uppercase leading-tight tracking-tight mb-20">
+          What is a <span className="text-red-600">Triathlon?</span>
         </h2>
 
-        {/* --- Section A: The Three Legs --- */}
-        <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">
-          The Three Legs
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-          {LEGS.map((leg) => (
-            <LegCard key={leg.label} leg={leg} />
-          ))}
+        {/* The Three Legs */}
+        <p className="text-xs font-bold uppercase tracking-[.2em] text-gray-400 mb-8">The Three Legs</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+          {LEGS.map((leg) => <LegCard key={leg.label} leg={leg} />)}
         </div>
 
-        {/* --- Section B: Race Types --- */}
-        <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">
-          Race Types
-        </h3>
+        {/* Race Types */}
+        <p className="text-xs font-bold uppercase tracking-[.2em] text-gray-400 mb-8">Race Formats</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {RACE_TYPES.map((race) => (
-            <RaceCard key={race.name} race={race} />
-          ))}
+          {RACE_TYPES.map((race) => <RaceCard key={race.name} race={race} />)}
         </div>
       </div>
     </section>

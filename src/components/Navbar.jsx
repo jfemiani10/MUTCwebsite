@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 
-// Only the three active nav destinations
 const NAV_LINKS = [
   { label: 'Home',     to: '/' },
   { label: 'About',    to: '/about' },
@@ -10,43 +9,62 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const navigate = useNavigate()
+  const [scrolled, setScrolled] = useState(false)
+  const navigate  = useNavigate()
+  const location  = useLocation()
+  const isHome    = location.pathname === '/'
 
-  // Navigate to the route and immediately scroll to the top of the page
+  // On the homepage only, go transparent until user scrolls past the fold
+  useEffect(() => {
+    if (!isHome) { setScrolled(true); return }
+    setScrolled(window.scrollY > 60)
+    const onScroll = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [isHome])
+
   function handleNav(to) {
     navigate(to)
     window.scrollTo(0, 0)
     setMenuOpen(false)
   }
 
-  return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
-      <div className="max-w-6xl mx-auto px-4 py-0 flex items-center justify-between">
+  // Styles that flip between transparent-over-hero and solid-white
+  const solid = !isHome || scrolled
+  const navClass  = solid
+    ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm'
+    : 'bg-transparent'
+  const linkColor = solid ? 'text-gray-700 hover:text-red-700' : 'text-white/90 hover:text-white'
+  const barColor  = solid ? 'bg-gray-800' : 'bg-white'
+  const muColor   = solid ? 'text-red-700' : 'text-red-400'
+  const clubColor = solid ? 'text-gray-900' : 'text-white'
 
-        {/* Logo — always goes home and scrolls to top */}
-        <button
-          onClick={() => handleNav('/')}
-          className="flex items-center gap-2"
-        >
+  return (
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${navClass}`}>
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+
+        {/* Logo */}
+        <button onClick={() => handleNav('/')} className="flex items-center gap-3 py-1">
           <img
             src="/logo.jpg"
             alt="Miami University Triathlon Club"
-            className="h-20 w-20 object-contain rounded-sm"
+            className="h-20 w-20 object-contain drop-shadow-md"
           />
-          <span className="text-black font-bold text-base tracking-tight leading-tight text-left">
-            <span className="text-red-700">Miami University</span>
-            <br />
+          <span className={`font-bold text-sm tracking-tight leading-snug text-left transition-colors duration-300 ${clubColor}`}>
+            <span className={`block font-extrabold transition-colors duration-300 ${muColor}`}>
+              Miami University
+            </span>
             Triathlon Club
           </span>
         </button>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-8">
+        {/* Desktop links */}
+        <ul className="hidden md:flex items-center gap-10">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
               <button
                 onClick={() => handleNav(link.to)}
-                className="text-sm font-semibold uppercase tracking-wider text-gray-700 hover:text-red-700 transition-colors duration-200"
+                className={`text-xs font-bold uppercase tracking-[.15em] transition-colors duration-200 ${linkColor}`}
               >
                 {link.label}
               </button>
@@ -54,27 +72,27 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Hamburger Button */}
+        {/* Hamburger */}
         <button
           className="md:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-6 h-0.5 bg-black transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-black transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-black transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 transition-all duration-300 ${barColor} ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 transition-all duration-300 ${barColor} ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 transition-all duration-300 ${barColor} ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-4 py-4">
-          <ul className="flex flex-col gap-4">
+        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-5">
+          <ul className="flex flex-col gap-5">
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
                 <button
                   onClick={() => handleNav(link.to)}
-                  className="block text-sm font-semibold uppercase tracking-wider text-gray-700 hover:text-red-700 transition-colors duration-200"
+                  className="text-xs font-bold uppercase tracking-[.15em] text-gray-700 hover:text-red-700 transition-colors"
                 >
                   {link.label}
                 </button>
