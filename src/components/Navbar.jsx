@@ -28,6 +28,11 @@ export default function Navbar() {
           onClick={() => handleNav('/')}
           className="flex items-center gap-2"
         >
+          <img
+            src="/logo.jpg"
+            alt="Miami University Triathlon Club"
+            className="h-10 w-10 object-contain rounded-sm"
+          />
           <span className="text-red-700 font-black text-xl tracking-tight uppercase leading-none">
             Miami
           </span>
