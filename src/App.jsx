@@ -14,8 +14,8 @@ function HomePage() {
     <main>
       <Hero />
       <AboutPreview />
-      <WhatIsTriathlon />
       <InstagramSection />
+      <WhatIsTriathlon />
     </main>
   )
 }

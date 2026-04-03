@@ -40,26 +40,29 @@ export default function InstagramSection() {
           </h2>
         </div>
 
-        {/* Instagram post embed — official blockquote method */}
-        <div className="w-full">
+        {/* Instagram post embed — official blockquote method.
+            NOTE: data-instgrm-captioned must be an empty string, not a
+            boolean, or Instagram's script won't recognise the attribute. */}
+        <div className="flex justify-center w-full">
           <blockquote
             className="instagram-media"
-            data-instgrm-captioned
-            data-instgrm-permalink="https://www.instagram.com/p/DWhlSBiiSvs/?utm_source=ig_embed&utm_campaign=loading"
+            data-instgrm-captioned=""
+            data-instgrm-permalink="https://www.instagram.com/p/DWhlSBiiSvs/"
             data-instgrm-version="14"
             style={{
               background: '#FFF',
               border: '0',
               borderRadius: '3px',
-              boxShadow: '0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15)',
+              boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)',
+              display: 'block',
               margin: '0 auto',
               maxWidth: '540px',
               minWidth: '326px',
               padding: '0',
-              width: '100%',
+              width: 'calc(100% - 2px)',
             }}
           >
-            {/* Fallback content shown before the embed script loads */}
+            {/* Fallback link shown before the embed script loads */}
             <a
               href="https://www.instagram.com/p/DWhlSBiiSvs/"
               target="_blank"
