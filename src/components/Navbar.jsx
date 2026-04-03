@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
-      <div className="max-w-6xl mx-auto px-4 py-1 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 py-0 flex items-center justify-between">
 
         {/* Logo — always goes home and scrolls to top */}
         <button

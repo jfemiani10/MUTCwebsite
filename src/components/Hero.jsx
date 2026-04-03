@@ -1,44 +1,39 @@
 import { useState, useEffect } from 'react'
 
 const IMAGES = ['/hero1.jpg', '/hero2.jpg']
+const DISPLAY_MS = 9000  // how long each image stays visible
+const FADE_MS    = 1000  // duration of each fade (must match transition-duration below)
 
-// Hero — full-screen banner with crossfading background images
+// Hero — full-screen banner with fade-to-black-then-next-image carousel
 export default function Hero() {
   const [current, setCurrent] = useState(0)
-  const [prev, setPrev] = useState(null)
+  const [visible, setVisible] = useState(true) // false = image faded out (black screen)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPrev(current)
-      setCurrent((c) => (c + 1) % IMAGES.length)
-    }, 5000) // swap every 5 seconds
+      // Step 1: fade current image to black
+      setVisible(false)
+      // Step 2: after fade completes, swap image and fade back in
+      setTimeout(() => {
+        setCurrent((c) => (c + 1) % IMAGES.length)
+        setVisible(true)
+      }, FADE_MS)
+    }, DISPLAY_MS)
 
     return () => clearInterval(interval)
-  }, [current])
+  }, [])
 
   return (
     <section
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
     >
-      {/* Previous image — fades out when a new one arrives */}
-      {prev !== null && (
-        <img
-          key={`prev-${prev}`}
-          src={IMAGES[prev]}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
-        />
-      )}
-
-      {/* Current image — fades in */}
+      {/* Background image — fades in/out via visible state */}
       <img
-        key={`cur-${current}`}
         src={IMAGES[current]}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000"
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}
       />
 
       {/* Dark overlay so text stays readable over any photo */}
@@ -68,8 +63,8 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* Bottom fade into page */}
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent" />
+      {/* Bottom fade into the black About section below */}
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent" />
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-400">

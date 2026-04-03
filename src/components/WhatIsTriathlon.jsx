@@ -5,24 +5,18 @@ const LEGS = [
   {
     label: 'Swim',
     image: '/swim.jpg',
-    // object-top shows the top of the image
-    imageClass: 'object-cover object-top',
     description:
       'The first leg. Races begin in open water or a pool. Athletes pace themselves to conserve energy for what follows.',
   },
   {
     label: 'Bike',
     image: '/bike.jpg',
-    // scale-125 zooms in; parent overflow-hidden keeps it clipped
-    imageClass: 'object-cover object-center scale-125',
     description:
       'The longest leg by time. Cyclists push hard on the road course before transitioning to the final discipline.',
   },
   {
     label: 'Run',
     image: '/run.jpg',
-    // object-top shows the top of the image
-    imageClass: 'object-cover object-top',
     description:
       'The final leg. Athletes dig deep on fatigued legs to cross the finish line — the defining moment of every race.',
   },
@@ -58,7 +52,7 @@ function LegCard({ leg }) {
         <img
           src={leg.image}
           alt={leg.label}
-          className={`w-full h-full ${leg.imageClass}`}
+          className="w-full h-full object-cover"
         />
         {/* Gradient fades the photo into the white card body */}
         <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent" />
@@ -86,7 +80,7 @@ function RaceCard({ race }) {
 
 export default function WhatIsTriathlon() {
   return (
-    <section id="what-is-triathlon" className="py-24 bg-gray-50">
+    <section id="what-is-triathlon" className="py-24 bg-gray-200">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Section header */}
