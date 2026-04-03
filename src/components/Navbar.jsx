@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { asset } from '../utils/asset'
+import logoImg from '../assets/logo.jpg'
 
 const NAV_LINKS = [
   { label: 'Home',     to: '/' },
@@ -47,7 +47,7 @@ export default function Navbar() {
         {/* Logo */}
         <button onClick={() => handleNav('/')} className="flex items-center gap-3 py-1">
           <img
-            src={asset('logo.jpg')}
+            src={logoImg}
             alt="Miami University Triathlon Club"
             className="h-20 w-20 object-contain drop-shadow-md"
           />

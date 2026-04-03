@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import { asset } from '../utils/asset'
+import hero1 from '../assets/hero1.jpg'
+import hero2 from '../assets/hero2.jpg'
 
-const IMAGES = [asset('hero1.jpg'), asset('hero2.jpg')]
+const IMAGES = [hero1, hero2]
 const DISPLAY_MS = 9000
 const FADE_MS    = 1000
 

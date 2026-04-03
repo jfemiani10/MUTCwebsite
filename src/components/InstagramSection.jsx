@@ -1,4 +1,4 @@
-import { asset } from '../utils/asset'
+import logoImg from '../assets/logo.jpg'
 
 export default function InstagramSection() {
   const POST_URL    = 'https://www.instagram.com/p/DWhlSBiiSvs/'
@@ -29,7 +29,7 @@ export default function InstagramSection() {
           className="group w-full max-w-sm bg-white border border-gray-200 hover:border-red-300 shadow-sm hover:shadow-lg transition-all duration-300"
         >
           <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-100">
-            <img src={asset('logo.jpg')} alt="mu_triathlon" className="w-9 h-9 rounded-full object-contain border border-gray-200 bg-white" />
+            <img src={logoImg} alt="mu_triathlon" className="w-9 h-9 rounded-full object-contain border border-gray-200 bg-white" />
             <div>
               <p className="text-sm font-bold text-gray-900 leading-none">mu_triathlon</p>
               <p className="text-xs text-gray-400 mt-0.5">Miami University Triathlon Club</p>
