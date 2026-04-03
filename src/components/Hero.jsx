@@ -1,15 +1,48 @@
-// Hero — full-screen banner at the top of the homepage
+import { useState, useEffect } from 'react'
+
+const IMAGES = ['/hero1.jpg', '/hero2.jpg']
+
+// Hero — full-screen banner with crossfading background images
 export default function Hero() {
+  const [current, setCurrent] = useState(0)
+  const [prev, setPrev] = useState(null)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPrev(current)
+      setCurrent((c) => (c + 1) % IMAGES.length)
+    }, 5000) // swap every 5 seconds
+
+    return () => clearInterval(interval)
+  }, [current])
+
   return (
     <section
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
     >
-      {/* Background gradient accent */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-red-950 opacity-90" />
+      {/* Previous image — fades out when a new one arrives */}
+      {prev !== null && (
+        <img
+          key={`prev-${prev}`}
+          src={IMAGES[prev]}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+        />
+      )}
 
-      {/* Decorative red bar on the left */}
-      <div className="absolute left-0 top-0 h-full w-1.5 bg-red-700" />
+      {/* Current image — fades in */}
+      <img
+        key={`cur-${current}`}
+        src={IMAGES[current]}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000"
+      />
+
+      {/* Dark overlay so text stays readable over any photo */}
+      <div className="absolute inset-0 bg-black opacity-55" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
@@ -24,7 +57,7 @@ export default function Hero() {
           <span className="block text-5xl sm:text-7xl lg:text-8xl tracking-tight">
             Triathlon
           </span>
-          <span className="block text-3xl sm:text-5xl lg:text-6xl tracking-widest text-red-600 mt-2">
+          <span className="block text-3xl sm:text-5xl lg:text-6xl tracking-widest text-red-500 mt-2">
             Club
           </span>
         </h1>
@@ -35,7 +68,7 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* Bottom fade */}
+      {/* Bottom fade into page */}
       <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent" />
 
       {/* Scroll indicator */}
