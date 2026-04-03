@@ -1,12 +1,13 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-// Navigation links used in both desktop and mobile menus
+// Navigation links — `to` is a router path, `href` is an anchor on the homepage
 const NAV_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Team', href: '#team' },
-  { label: 'Schedule', href: '#schedule' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home',     to: '/' },
+  { label: 'About',    to: '/about' },
+  { label: 'Team',     to: '/#team' },
+  { label: 'Schedule', to: '/schedule' },
+  { label: 'Contact',  to: '/#contact' },
 ]
 
 export default function Navbar() {
@@ -17,26 +18,26 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
 
-        {/* Logo / Team Name */}
-        <a href="#home" className="flex items-center gap-2">
+        {/* Logo / Team Name — always goes home */}
+        <Link to="/" className="flex items-center gap-2">
           <span className="text-red-700 font-black text-xl tracking-tight uppercase leading-none">
             Miami
           </span>
           <span className="text-black font-semibold text-xl tracking-tight uppercase leading-none">
             Triathlon
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
+              <Link
+                to={link.to}
                 className="text-sm font-semibold uppercase tracking-wider text-gray-700 hover:text-red-700 transition-colors duration-200"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -59,13 +60,13 @@ export default function Navbar() {
           <ul className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
-                <a
-                  href={link.href}
+                <Link
+                  to={link.to}
                   onClick={() => setMenuOpen(false)}
                   className="block text-sm font-semibold uppercase tracking-wider text-gray-700 hover:text-red-700 transition-colors duration-200"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
