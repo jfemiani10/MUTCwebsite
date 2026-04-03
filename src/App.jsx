@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Hero from './components/Hero'
 import AboutPreview from './components/AboutPreview'
 import WhatIsTriathlon from './components/WhatIsTriathlon'
+import InstagramSection from './components/InstagramSection'
 import SchedulePage from './pages/SchedulePage'
 import AboutPage from './pages/AboutPage'
 
@@ -14,6 +15,7 @@ function HomePage() {
       <Hero />
       <AboutPreview />
       <WhatIsTriathlon />
+      <InstagramSection />
     </main>
   )
 }
