@@ -1,36 +1,28 @@
-// Events — upcoming race schedule with placeholder data
+// Events — upcoming race schedule
 const EVENTS = [
   {
     id: 1,
-    date: { month: 'APR', day: '19' },
-    name: 'Collegiate Triathlon — Ohio State',
-    location: 'Columbus, OH',
-    type: 'Sprint',
+    date: { month: 'MAR', day: '27' },
+    name: 'USAT Collegiate Club National Championships',
+    location: 'Gulfport, MS',
+    detail: 'Olympic · Draft-Legal Sprint · Mixed Relay',
     status: 'Upcoming',
   },
   {
     id: 2,
-    date: { month: 'MAY', day: '03' },
-    name: 'USAT Collegiate Nationals Qualifier',
-    location: 'Cincinnati, OH',
-    type: 'Olympic',
+    date: { month: 'SEP', day: '13' },
+    name: 'Zoom RedHawk Triathlon & Multisport Festival',
+    location: 'Hueston Woods State Park, College Corner, OH',
+    detail: 'Sprint · Olympic · Multiple formats',
     status: 'Upcoming',
   },
   {
     id: 3,
-    date: { month: 'MAY', day: '17' },
-    name: 'Miami Spring Triathlon',
-    location: 'Oxford, OH',
-    type: 'Sprint',
+    date: { month: 'SEP', day: '28' },
+    name: 'Boilerman Triathlon',
+    location: 'Lake Freeman, Monticello, IN',
+    detail: 'Olympic · MECTC Championship',
     status: 'Upcoming',
-  },
-  {
-    id: 4,
-    date: { month: 'SEP', day: '06' },
-    name: 'Season Opener — Dayton',
-    location: 'Dayton, OH',
-    type: 'Sprint',
-    status: 'Registration Open',
   },
 ]
 
@@ -60,12 +52,9 @@ export default function Events() {
           </span>
         </div>
 
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
-          <h2 className="text-4xl font-black text-black uppercase leading-tight">
-            Upcoming <span className="text-red-700">Events</span>
-          </h2>
-          <p className="text-gray-400 text-sm italic">* Placeholder data</p>
-        </div>
+        <h2 className="text-4xl font-black text-black uppercase leading-tight mb-12">
+          Upcoming <span className="text-red-700">Events</span>
+        </h2>
 
         {/* Event list */}
         <div className="flex flex-col gap-4">
@@ -85,9 +74,8 @@ export default function Events() {
               {/* Event details */}
               <div className="flex-1 px-6 py-4">
                 <h3 className="text-lg font-bold text-black">{event.name}</h3>
-                <p className="text-gray-500 text-sm mt-1">
-                  {event.location} &nbsp;·&nbsp; {event.type} Distance
-                </p>
+                <p className="text-gray-500 text-sm mt-1">{event.location}</p>
+                <p className="text-gray-400 text-xs mt-0.5">{event.detail}</p>
               </div>
 
               {/* Status badge */}

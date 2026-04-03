@@ -1,13 +1,10 @@
 import { Link } from 'react-router-dom'
 
-function Section({ num, title, description }) {
+function Section({ title, description }) {
   return (
-    <div className="grid md:grid-cols-[80px_1fr] gap-6 items-start py-12 border-b border-gray-100 last:border-0">
-      <span className="text-4xl font-black text-gray-100 leading-none">{num}</span>
-      <div>
-        <h2 className="text-xl font-black text-gray-900 uppercase tracking-tight mb-3">{title}</h2>
-        <p className="text-gray-500 leading-relaxed">{description}</p>
-      </div>
+    <div className="py-10 border-b border-gray-100 last:border-0">
+      <h2 className="text-xl font-black text-gray-900 uppercase tracking-tight mb-3">{title}</h2>
+      <p className="text-gray-500 leading-relaxed">{description}</p>
     </div>
   )
 }
@@ -26,13 +23,13 @@ export default function AboutPage() {
       </div>
 
       <div className="max-w-4xl mx-auto px-8 py-20">
-        <Section num="01" title="Club Purpose"
+        <Section title="Club Purpose"
           description="The Miami University Triathlon Club exists to promote fitness, competition, and community among students passionate about endurance sport. Content coming soon." />
-        <Section num="02" title="Eligibility"
+        <Section title="Eligibility"
           description="All currently enrolled Miami University students are eligible to join, regardless of experience level. Full eligibility details coming soon." />
-        <Section num="03" title="Dues"
+        <Section title="Dues"
           description="Annual membership dues help cover race entry fees, equipment, and club events. Dues information and payment details coming soon." />
-        <Section num="04" title="How to Join"
+        <Section title="How to Join"
           description="Interested in joining? Attend one of our practices or reach out via Instagram or email. Onboarding details coming soon." />
       </div>
     </main>

@@ -4,11 +4,6 @@ export default function AboutPreview() {
   return (
     <section id="about" className="relative py-32 bg-black overflow-hidden">
 
-      {/* Giant decorative background number */}
-      <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[20rem] font-black text-white/[0.03] leading-none select-none pointer-events-none pr-8">
-        01
-      </span>
-
       <div className="relative max-w-6xl mx-auto px-8">
 
         {/* Label */}
