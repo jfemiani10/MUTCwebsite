@@ -1,9 +1,19 @@
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import AboutPreview from './components/AboutPreview'
+import Events from './components/Events'
+import Footer from './components/Footer'
+
 function App() {
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-red-700">
-        Miami University Triathlon Club
-      </h1>
+    <div className="font-sans">
+      <Navbar />
+      <main>
+        <Hero />
+        <AboutPreview />
+        <Events />
+      </main>
+      <Footer />
     </div>
   )
 }
