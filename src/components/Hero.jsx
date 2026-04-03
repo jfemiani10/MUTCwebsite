@@ -30,25 +30,9 @@ export default function Hero() {
         </h1>
 
         {/* Tagline */}
-        <p className="text-gray-300 text-lg sm:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
+        <p className="text-gray-300 text-lg sm:text-xl max-w-xl mx-auto leading-relaxed">
           Swim. Bike. Run. — Representing Miami University with pride in every race.
         </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#about"
-            className="bg-red-700 hover:bg-red-800 text-white font-bold uppercase tracking-wider text-sm px-8 py-4 transition-colors duration-200"
-          >
-            Learn More
-          </a>
-          <a
-            href="#schedule"
-            className="border-2 border-white hover:border-red-600 hover:text-red-500 text-white font-bold uppercase tracking-wider text-sm px-8 py-4 transition-colors duration-200"
-          >
-            View Schedule
-          </a>
-        </div>
       </div>
 
       {/* Bottom fade */}
