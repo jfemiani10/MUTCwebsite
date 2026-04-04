@@ -13,6 +13,7 @@ function HomePage() {
   return (
     <main>
       <Hero />
+      <div className="h-3 bg-black" />
       <AboutPreview />
       <WhatIsTriathlon />
       <InstagramSection />

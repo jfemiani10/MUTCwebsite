@@ -36,7 +36,6 @@ export default function Navbar() {
     ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm'
     : 'bg-transparent'
   const linkColor = solid ? 'text-gray-700 hover:text-red-700' : 'text-white/90 hover:text-white'
-  const barColor  = solid ? 'bg-gray-800' : 'bg-white'
   const muColor   = solid ? 'text-red-700' : 'text-red-400'
   const clubColor = solid ? 'text-gray-900' : 'text-white'
 
@@ -75,13 +74,13 @@ export default function Navbar() {
 
         {/* Hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="md:hidden flex flex-col gap-1.5 p-2 [filter:drop-shadow(0_0_1px_white)_drop-shadow(0_0_1px_white)]"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`block w-6 h-0.5 transition-all duration-300 ${barColor} ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-0.5 transition-all duration-300 ${barColor} ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-0.5 transition-all duration-300 ${barColor} ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 transition-all duration-300 bg-black ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 transition-all duration-300 bg-black ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 transition-all duration-300 bg-black ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </div>
 
