@@ -92,7 +92,7 @@ export default function WhatIsTriathlon() {
             What is a <span className="text-red-600">Triathlon?</span>
           </h2>
 
-          <p className="text-xs font-bold uppercase tracking-[.2em] text-gray-400 mb-8">The Three Legs</p>
+          <p className="text-xs font-bold uppercase tracking-[.2em] text-gray-600 mb-8">The Three Legs</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {LEGS.map((leg) => <LegCard key={leg.label} leg={leg} />)}
           </div>
@@ -125,7 +125,7 @@ export default function WhatIsTriathlon() {
 
       <section className="pt-24 pb-32 bg-white">
         <div className="max-w-6xl mx-auto px-8">
-          <p className="text-xs font-bold uppercase tracking-[.2em] text-gray-400 mb-8">Race Formats</p>
+          <p className="text-xs font-bold uppercase tracking-[.2em] text-gray-600 mb-8">Race Formats</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {RACE_TYPES.map((race) => <RaceCard key={race.name} race={race} />)}
           </div>

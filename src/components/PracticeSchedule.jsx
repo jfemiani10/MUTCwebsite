@@ -8,13 +8,13 @@ const SCHEDULE = [
   },
   {
     day: 'Tuesday',
-    time: '4:30pm',
+    time: '4:45pm',
     activity: 'Run',
     location: 'Richard and Carole Cocks Art Museum (Parking lot)',
   },
   {
     day: 'Wednesday',
-    time: '4:30pm',
+    time: '4:45pm',
     activity: 'Cycling',
     location: 'Miami University – Student Health Services (South side)',
   },
@@ -26,7 +26,7 @@ const SCHEDULE = [
   },
   {
     day: 'Friday',
-    time: '4:30pm',
+    time: '4:45pm',
     activity: 'Run',
     location: 'Richard and Carole Cocks Art Museum (Parking lot)',
   },
@@ -99,8 +99,11 @@ export default function PracticeSchedule() {
         </div>
 
         {/* Small note below the table */}
-        <p className="text-gray-400 text-xs mt-4 italic">
+        <p className="text-gray-600 text-xs mt-4 italic">
           * Schedule is subject to change. Follow our Instagram for updates.
+        </p>
+        <p className="text-gray-600 text-xs mt-1 italic">
+          * Helmets are required for all cycling sessions.
         </p>
       </div>
     </section>

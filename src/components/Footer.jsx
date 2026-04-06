@@ -24,7 +24,9 @@ export default function Footer() {
           <div className="flex flex-wrap gap-x-10 gap-y-3 text-sm text-gray-400">
             <div>
               <span className="text-white text-xs font-semibold uppercase tracking-wider block mb-0.5">Email</span>
-              triathlon@miamioh.edu
+              <a href="mailto:turlozb@miamioh.edu" className="hover:text-white transition-colors">
+                turlozb@miamioh.edu
+              </a>
             </div>
             <div>
               <span className="text-white text-xs font-semibold uppercase tracking-wider block mb-0.5">Location</span>
@@ -39,10 +41,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/5 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-700">
+        <div className="border-t border-white/5 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-400">
           <p>© {new Date().getFullYear()} Miami University Triathlon Club. All rights reserved.</p>
           <p>Registered with the Office of Student Activities.</p>
         </div>
+        <p className="text-xs text-gray-500 mt-4 text-center">
+          Miami University Triathlon Club is a registered student organization and does not represent the official views or positions of Miami University.
+        </p>
       </div>
     </footer>
   )

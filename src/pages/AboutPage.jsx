@@ -5,7 +5,7 @@ import maxImg   from '../assets/max.jpg'
 
 export default function AboutPage() {
   return (
-    <main className="pt-20">
+    <main id="main-content" className="pt-20">
 
       {/* Hero banner */}
       <div className="bg-black text-white relative overflow-hidden min-h-[320px] flex items-center">
@@ -103,11 +103,19 @@ export default function AboutPage() {
               },
               {
                 title: 'Dues',
-                body: 'Annual membership dues help cover USAT registration, race entry fees, team equipment, and club events. Reach out via Instagram or email for current dues information.',
+                body: 'Annual membership dues are $200/year with required participation in club fundraising, or $400/year to opt out of fundraising. Dues help cover USAT registration, race entry fees, team equipment, and club events.',
               },
               {
                 title: 'How to Join',
-                body: 'Show up to any practice — no application needed. Follow @mu_triathlon on Instagram for practice updates, or shoot us an email to get connected before your first session.',
+                body: (
+                  <>
+                    Look for us at the Club Sports Fair or Mega Fair to get involved! You can also just show up to any practice — no sign-up needed. Or send an email to president Zach Turlo (
+                    <a href="mailto:turlozb@miamioh.edu" className="text-red-600 hover:underline">
+                      turlozb@miamioh.edu
+                    </a>
+                    ) and we will reach out to you!
+                  </>
+                ),
               },
             ].map(({ title, body }) => (
               <div key={title} className="bg-white border border-gray-100 p-8 hover:border-red-300 hover:shadow-md transition-all duration-200">

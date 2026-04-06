@@ -4,14 +4,6 @@ import beccaImg from '../assets/becca.jpg'
 const EVENTS = [
   {
     id: 1,
-    date: { month: 'MAR', day: '27' },
-    name: 'USAT Collegiate Club National Championships',
-    location: 'Gulfport, MS',
-    detail: 'Olympic · Draft-Legal Sprint · Mixed Relay',
-    status: 'Upcoming',
-  },
-  {
-    id: 2,
     date: { month: 'SEP', day: '13' },
     name: 'Zoom RedHawk Triathlon & Multisport Festival',
     location: 'Hueston Woods State Park, College Corner, OH',
@@ -19,11 +11,19 @@ const EVENTS = [
     status: 'Upcoming',
   },
   {
-    id: 3,
-    date: { month: 'SEP', day: '28' },
+    id: 2,
+    date: { month: 'SEP', day: null },
     name: 'Boilerman Triathlon',
     location: 'Lake Freeman, Monticello, IN',
     detail: 'Olympic · MECTC Championship',
+    status: 'Upcoming',
+  },
+  {
+    id: 3,
+    date: { month: 'MAR', day: null },
+    name: 'USAT Collegiate Club National Championships',
+    location: 'TBD',
+    detail: 'Olympic · Draft-Legal Sprint · Mixed Relay',
     status: 'Upcoming',
   },
 ]
@@ -85,7 +85,9 @@ export default function Events() {
                 <div className="text-xs font-bold uppercase tracking-widest opacity-80">
                   {event.date.month}
                 </div>
-                <div className="text-3xl font-black leading-none">{event.date.day}</div>
+                <div className="text-3xl font-black leading-none">
+                  {event.date.day ?? <span className="text-xl">TBD</span>}
+                </div>
               </div>
 
               {/* Event details */}
