@@ -8,6 +8,7 @@ import InstagramSection from './components/InstagramSection'
 import SchedulePage from './pages/SchedulePage'
 import AboutPage from './pages/AboutPage'
 import ExecTeamPage from './pages/ExecTeamPage'
+import DonatePage from './pages/DonatePage'
 
 // Homepage — assembled from section components
 function HomePage() {
@@ -39,6 +40,7 @@ export default function App() {
           <Route path="/about"    element={<AboutPage />} />
           <Route path="/schedule" element={<SchedulePage />} />
           <Route path="/exec"     element={<ExecTeamPage />} />
+          <Route path="/donate"   element={<DonatePage />} />
         </Routes>
         <Footer />
       </div>

@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import logoImg from '../assets/logo.jpg'
+import logoImg from '../assets/icon.jpeg'
 
 const NAV_LINKS = [
   { label: 'Home',     to: '/' },
   { label: 'About',    to: '/about' },
   { label: 'Schedule', to: '/schedule' },
   { label: 'Team',     to: '/exec' },
+  { label: 'Donate',   to: '/donate' },
 ]
 
 export default function Navbar() {
