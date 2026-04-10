@@ -1,3 +1,5 @@
+import donateImg from '../assets/donate.jpeg'
+
 const DONATION_URL =
   'https://securelb.imodules.com/s/916/lg21/form.aspx?sid=916&gid=1&pgid=6010&cid=11236&bledit=1&dids=1275'
 
@@ -9,10 +11,12 @@ const FUND_USES = [
 
 export default function DonatePage() {
   return (
-    <main id="main-content" className="pt-20">
+    <main id="main-content" className="pt-16">
 
       {/* Hero banner */}
       <div className="bg-black text-white relative overflow-hidden min-h-[280px] flex items-center">
+        <img src={donateImg} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-8 py-24 w-full">
           <div className="flex items-center gap-4 mb-5">
             <div className="w-8 h-px bg-red-600" />

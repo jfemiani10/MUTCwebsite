@@ -1,19 +1,23 @@
+import teamImg from '../assets/team.jpg'
+
 const EXEC = [
-  { role: 'President',        name: 'Charles Vallone',       email: 'vallonct@miamioh.edu' },
-  { role: 'President',        name: 'Zach Turlo',            email: 'turlozb@miamioh.edu' },
-  { role: 'Treasurer',        name: 'Rebecca Kolano',        email: 'kolanorr@miamioh.edu' },
-  { role: 'Secretary',        name: 'Anton Mueller',         email: 'muelle42@miamioh.edu' },
-  { role: 'Vice President',   name: 'Quinn LeBorgne',        email: 'leborgqj@miamioh.edu' },
-  { role: 'Safety Officer',   name: 'Kai Lewis',             email: 'lewisar5@miamioh.edu' },
-  { role: 'Fundraising Chair',name: 'Jonah Femiani',         email: 'femianjy@miamioh.edu' },
+  { role: 'President',         name: 'Charles Vallone',      email: 'vallonct@miamioh.edu' },
+  { role: 'President',         name: 'Zach Turlo',           email: 'turlozb@miamioh.edu' },
+  { role: 'Treasurer',         name: 'Rebecca Kolano',       email: 'kolanorr@miamioh.edu' },
+  { role: 'Secretary',         name: 'Anton Mueller',        email: 'muelle42@miamioh.edu' },
+  { role: 'Vice President',    name: 'Quinn LeBorgne',       email: 'leborgqj@miamioh.edu' },
+  { role: 'Safety Officer',    name: 'Kai Lewis',            email: 'lewisar5@miamioh.edu' },
+  { role: 'Fundraising Chair', name: 'Jonah Femiani',        email: 'femianjy@miamioh.edu' },
 ]
 
 export default function ExecTeamPage() {
   return (
-    <main id="main-content" className="pt-20">
+    <main id="main-content" className="pt-16">
 
       {/* Hero banner */}
       <div className="bg-black text-white relative overflow-hidden min-h-[280px] flex items-center">
+        <img src={teamImg} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
         <div className="relative max-w-6xl mx-auto px-8 py-24 w-full">
           <div className="flex items-center gap-4 mb-5">
             <div className="w-8 h-px bg-red-600" />

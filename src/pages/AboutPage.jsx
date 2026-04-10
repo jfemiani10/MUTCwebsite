@@ -5,7 +5,7 @@ import maxImg   from '../assets/max.jpg'
 
 export default function AboutPage() {
   return (
-    <main id="main-content" className="pt-20">
+    <main id="main-content" className="pt-16">
 
       {/* Hero banner */}
       <div className="bg-black text-white relative overflow-hidden min-h-[320px] flex items-center">

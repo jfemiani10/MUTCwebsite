@@ -4,7 +4,7 @@ import tentImg from '../assets/tent.jpg'
 
 export default function SchedulePage() {
   return (
-    <main id="main-content" className="pt-20">
+    <main id="main-content" className="pt-16">
 
       {/* Header with photo background */}
       <div className="relative bg-black text-white py-28 px-8 overflow-hidden">
