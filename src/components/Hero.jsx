@@ -13,6 +13,8 @@ export default function Hero() {
   const [visible, setVisible] = useState(true)
 
   useEffect(() => {
+    // Respect user's reduced-motion preference (WCAG 2.3.3)
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const interval = setInterval(() => {
       setVisible(false)
       setTimeout(() => {

@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="flex flex-wrap gap-x-10 gap-y-3 text-sm text-gray-400">
             <div>
               <span className="text-white text-xs font-semibold uppercase tracking-wider block mb-0.5">Email</span>
-              <a href="mailto:turlozb@miamioh.edu" className="hover:text-white transition-colors">
+              <a href="mailto:turlozb@miamioh.edu" className="hover:text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded">
                 turlozb@miamioh.edu
               </a>
             </div>
@@ -35,7 +35,7 @@ export default function Footer() {
             <div>
               <span className="text-white text-xs font-semibold uppercase tracking-wider block mb-0.5">Instagram</span>
               <a href="https://www.instagram.com/mu_triathlon/" target="_blank" rel="noopener noreferrer"
-                className="hover:text-white transition-colors">@mu_triathlon</a>
+                className="hover:text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded">@mu_triathlon</a>
             </div>
           </div>
         </div>

@@ -42,7 +42,7 @@ function StatusBadge({ status }) {
 
 export default function Events() {
   return (
-    <section id="schedule" className="relative py-24 overflow-hidden bg-gray-950">
+    <section id="schedule" aria-labelledby="events-heading" className="relative py-24 overflow-hidden bg-gray-950">
 
       {/* Background photo collage — two photos, left and right */}
       <img
@@ -70,7 +70,7 @@ export default function Events() {
           </span>
         </div>
 
-        <h2 className="text-4xl font-black text-white uppercase leading-tight mb-12">
+        <h2 id="events-heading" className="text-4xl font-black text-white uppercase leading-tight mb-12">
           Upcoming <span className="text-red-600">Events</span>
         </h2>
 

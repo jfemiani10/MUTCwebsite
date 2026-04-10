@@ -39,18 +39,20 @@ export default function ExecTeamPage() {
       </div>
 
       {/* Officer cards */}
-      <section className="bg-white py-24 px-8">
+      <section aria-labelledby="exec-heading" className="bg-white py-24 px-8">
+        <h2 id="exec-heading" className="sr-only">Executive Team Members</h2>
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {EXEC.map(({ role, name, email }) => (
             <div
               key={email}
               className="bg-white border border-gray-100 p-8 hover:border-red-300 hover:shadow-md transition-all duration-200"
             >
-              <p className="text-red-600 text-xs font-bold uppercase tracking-[.2em] mb-3">{role}</p>
-              <h2 className="text-xl font-black text-gray-900 uppercase tracking-tight mb-3">{name}</h2>
+              {/* red-700 on white = 5.9:1 ✓ */}
+              <p className="text-red-700 text-xs font-bold uppercase tracking-[.2em] mb-3">{role}</p>
+              <h3 className="text-xl font-black text-gray-900 uppercase tracking-tight mb-3">{name}</h3>
               <a
                 href={`mailto:${email}`}
-                className="text-sm text-gray-500 hover:text-red-600 transition-colors break-all"
+                className="text-sm text-gray-600 hover:text-red-700 transition-colors break-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 rounded"
               >
                 {email}
               </a>

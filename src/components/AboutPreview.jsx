@@ -51,10 +51,10 @@ export default function AboutPreview() {
           <div>
             <Link
               to="/about"
-              className="inline-flex items-center gap-3 border border-white/30 hover:border-red-600 hover:bg-red-600 text-white text-xs font-bold uppercase tracking-[.15em] px-8 py-4 transition-all duration-200"
+              className="inline-flex items-center gap-3 border border-white/30 hover:border-red-600 hover:bg-red-600 text-white text-xs font-bold uppercase tracking-[.15em] px-8 py-4 transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded"
             >
               Learn More
-              <span className="text-base leading-none">→</span>
+              <span className="text-base leading-none" aria-hidden="true">→</span>
             </Link>
           </div>
         </div>

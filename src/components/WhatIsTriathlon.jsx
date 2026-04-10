@@ -50,7 +50,7 @@ function LegCard({ leg }) {
         <img
           src={leg.image}
           alt={leg.label}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none"
         />
         <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent" />
         <div className="absolute bottom-4 left-6">
@@ -58,9 +58,10 @@ function LegCard({ leg }) {
         </div>
       </div>
       <div className="px-6 pb-8 pt-2">
-        <p className="text-gray-500 text-sm leading-relaxed">{leg.description}</p>
+        {/* gray-600 on white = 5.74:1 ✓ */}
+        <p className="text-gray-600 text-sm leading-relaxed">{leg.description}</p>
       </div>
-      <div className="h-0.5 bg-red-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+      <div className="h-0.5 bg-red-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left motion-reduce:transition-none" />
     </div>
   )
 }
@@ -68,12 +69,14 @@ function LegCard({ leg }) {
 function RaceCard({ race }) {
   return (
     <div className="relative bg-white border border-gray-100 p-8 hover:border-red-200 hover:shadow-md transition-all duration-200">
-      <span className="absolute top-4 right-6 text-5xl font-black text-gray-100 leading-none select-none">
+      <span className="absolute top-4 right-6 text-5xl font-black text-gray-100 leading-none select-none" aria-hidden="true">
         {race.num}
       </span>
       <h3 className="text-lg font-black uppercase text-gray-900 mb-2 tracking-tight">{race.name}</h3>
-      <p className="text-red-600 text-xs font-bold uppercase tracking-wider mb-4">{race.distances}</p>
-      <p className="text-gray-500 text-sm leading-relaxed">{race.description}</p>
+      {/* red-700 on white = 5.9:1 ✓ (text-xs needs ≥4.5:1) */}
+      <p className="text-red-700 text-xs font-bold uppercase tracking-wider mb-4">{race.distances}</p>
+      {/* gray-600 on white = 5.74:1 ✓ */}
+      <p className="text-gray-600 text-sm leading-relaxed">{race.description}</p>
     </div>
   )
 }
@@ -81,14 +84,19 @@ function RaceCard({ race }) {
 export default function WhatIsTriathlon() {
   return (
     <>
-      <section id="what-is-triathlon" className="pt-32 pb-24 bg-white">
+      <section
+        id="what-is-triathlon"
+        aria-labelledby="triathlon-heading"
+        className="pt-32 pb-24 bg-white"
+      >
         <div className="max-w-6xl mx-auto px-8">
 
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-8 h-px bg-red-600" />
-            <span className="text-red-600 text-xs font-bold uppercase tracking-[.2em]">The Sport</span>
+            <div className="w-8 h-px bg-red-700" aria-hidden="true" />
+            {/* red-700 on white = 5.9:1 ✓ */}
+            <span className="text-red-700 text-xs font-bold uppercase tracking-[.2em]">The Sport</span>
           </div>
-          <h2 className="text-5xl font-black text-gray-900 uppercase leading-tight tracking-tight mb-20">
+          <h2 id="triathlon-heading" className="text-5xl font-black text-gray-900 uppercase leading-tight tracking-tight mb-20">
             What is a <span className="text-red-600">Triathlon?</span>
           </h2>
 
@@ -100,11 +108,11 @@ export default function WhatIsTriathlon() {
       </section>
 
       {/* Photo strip — Anton | quote | Thea */}
-      <div className="flex h-72 md:h-96">
+      <div className="flex h-72 md:h-96" aria-hidden="true">
 
         {/* Left photo — Anton */}
         <div className="relative w-1/4 overflow-hidden hidden sm:block">
-          <img src={antonImg} alt="" aria-hidden="true" className="w-full h-full object-cover" />
+          <img src={antonImg} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black" />
         </div>
 
@@ -117,15 +125,18 @@ export default function WhatIsTriathlon() {
 
         {/* Right photo — Thea */}
         <div className="relative w-1/4 overflow-hidden hidden sm:block">
-          <img src={theaImg} alt="" aria-hidden="true" className="w-full h-full object-cover" />
+          <img src={theaImg} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-l from-black/20 to-black" />
         </div>
 
       </div>
 
-      <section className="pt-24 pb-32 bg-white">
+      <section
+        aria-labelledby="race-formats-heading"
+        className="pt-24 pb-32 bg-white"
+      >
         <div className="max-w-6xl mx-auto px-8">
-          <p className="text-xs font-bold uppercase tracking-[.2em] text-gray-600 mb-8">Race Formats</p>
+          <p id="race-formats-heading" className="text-xs font-bold uppercase tracking-[.2em] text-gray-600 mb-8">Race Formats</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {RACE_TYPES.map((race) => <RaceCard key={race.name} race={race} />)}
           </div>

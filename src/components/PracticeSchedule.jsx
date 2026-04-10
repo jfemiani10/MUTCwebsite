@@ -48,7 +48,7 @@ function ActivityBadge({ activity }) {
 
 export default function PracticeSchedule() {
   return (
-    <section id="practices" className="py-24 bg-white">
+    <section id="practices" aria-labelledby="practices-heading" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Section header */}
@@ -58,7 +58,7 @@ export default function PracticeSchedule() {
             Training
           </span>
         </div>
-        <h2 className="text-4xl font-black text-black uppercase leading-tight mb-12">
+        <h2 id="practices-heading" className="text-4xl font-black text-black uppercase leading-tight mb-12">
           Practice <span className="text-red-700">Schedule</span>
         </h2>
 
