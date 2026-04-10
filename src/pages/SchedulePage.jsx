@@ -6,16 +6,17 @@ export default function SchedulePage() {
   return (
     <main id="main-content" className="pt-16">
 
-      {/* Header with photo background */}
-      <div className="relative bg-black text-white py-28 px-8 overflow-hidden">
-        <img
-          src={scheduleImg}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
-        <div className="relative max-w-6xl mx-auto">
+      {/* Hero banner */}
+      <div className="bg-black text-white relative overflow-hidden min-h-[320px] flex items-center">
+
+        {/* Right-half photo */}
+        <div className="absolute inset-y-0 right-0 w-1/2 hidden md:block">
+          <img src={scheduleImg} alt="" aria-hidden="true" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />
+        </div>
+
+        {/* Text content */}
+        <div className="relative max-w-6xl mx-auto px-8 py-24 w-full">
           <div className="flex items-center gap-4 mb-5">
             <div className="w-8 h-px bg-red-600" />
             <span className="text-red-500 text-xs font-bold uppercase tracking-[.2em]">Miami Triathlon</span>
