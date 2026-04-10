@@ -1,4 +1,4 @@
-import teamImg from '../assets/team.jpg'
+import teamImg from '../assets/team1.jpg'
 
 const EXEC = [
   { role: 'President',         name: 'Charles Vallone',      email: 'vallonct@miamioh.edu' },

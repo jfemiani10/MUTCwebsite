@@ -1,4 +1,4 @@
-import donateImg from '../assets/donate.jpeg'
+import donateImg from '../assets/donate1.jpeg'
 
 const DONATION_URL =
   'https://securelb.imodules.com/s/916/lg21/form.aspx?sid=916&gid=1&pgid=6010&cid=11236&bledit=1&dids=1275'

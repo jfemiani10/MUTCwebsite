@@ -1,6 +1,6 @@
 import PracticeSchedule from '../components/PracticeSchedule'
 import Events from '../components/Events'
-import tentImg from '../assets/tent.jpg'
+import scheduleImg from '../assets/schedule1.png'
 
 export default function SchedulePage() {
   return (
@@ -9,7 +9,7 @@ export default function SchedulePage() {
       {/* Header with photo background */}
       <div className="relative bg-black text-white py-28 px-8 overflow-hidden">
         <img
-          src={tentImg}
+          src={scheduleImg}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-30"
