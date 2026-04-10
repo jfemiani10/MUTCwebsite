@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import logoImg from '../assets/icon.jpeg'
+import logoImg from '../assets/logo.png'
 
 export default function Footer() {
   return (
@@ -13,7 +13,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <img src={logoImg} alt="Miami University Triathlon Club" className="h-10 w-10 object-contain rounded" />
+            <img src={logoImg} alt="Miami University Triathlon Club" className="h-10 w-10 object-contain rounded-full" />
             <div className="leading-snug">
               <p className="text-red-500 font-extrabold text-sm uppercase tracking-tight">Miami University</p>
               <p className="text-white font-semibold text-sm uppercase tracking-tight">Triathlon Club</p>

@@ -41,7 +41,8 @@ export default function DonatePage() {
           <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mb-16">
             The Miami University Triathlon Club is entirely student-run and self-funded. Donations from
             supporters like you allow us to compete, train, and grow as athletes and as a team. We would
-            greatly appreciate any contribution you can make.
+            greatly appreciate any contribution you can make. This link can also be used to donate to
+            our Swimathon fundraiser.
           </p>
 
           {/* Fund use cards */}
@@ -55,33 +56,8 @@ export default function DonatePage() {
             ))}
           </div>
 
-          {/* Swimathon callout */}
-          <div className="bg-black text-white p-10 md:p-14 flex flex-col md:flex-row md:items-center gap-8 md:gap-14">
-            <div className="flex-1">
-              <p className="text-red-500 text-xs font-bold uppercase tracking-[.2em] mb-3">Fundraiser</p>
-              <h2 className="text-4xl font-black uppercase leading-tight tracking-tight mb-4">
-                Swimathon<br /><span className="text-red-600">Fundraiser</span>
-              </h2>
-              <p className="text-gray-400 leading-relaxed max-w-md">
-                We are also raising money through our Swimathon fundraiser. Use the donation link below
-                to contribute directly to the club through this event — every lap counts.
-              </p>
-            </div>
-            <div className="flex-shrink-0">
-              <a
-                href={DONATION_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-red-700 hover:bg-red-600 text-white text-xs font-bold uppercase tracking-[.15em] px-10 py-5 transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                Donate to the Swimathon
-                <span className="text-base leading-none">→</span>
-              </a>
-            </div>
-          </div>
-
           {/* Main CTA */}
-          <div className="mt-12 text-center">
+          <div className="text-center">
             <p className="text-gray-500 mb-8 text-lg leading-relaxed max-w-lg mx-auto">
               Ready to support Miami Triathlon? Click below to make a secure donation through the
               Miami University giving portal.

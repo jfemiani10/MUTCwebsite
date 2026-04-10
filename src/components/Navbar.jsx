@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import logoImg from '../assets/icon.jpeg'
+import logoImg from '../assets/logo.png'
 
 const NAV_LINKS = [
   { label: 'Home',     to: '/' },
@@ -53,7 +53,7 @@ export default function Navbar() {
           <img
             src={logoImg}
             alt="Miami University Triathlon Club"
-            className="h-20 w-20 object-contain drop-shadow-md"
+            className="h-14 w-14 object-contain rounded-full drop-shadow-md"
           />
           <span className={`font-bold text-sm tracking-tight leading-snug text-left transition-colors duration-300 ${clubColor}`}>
             <span className={`block font-extrabold transition-colors duration-300 ${muColor}`}>
