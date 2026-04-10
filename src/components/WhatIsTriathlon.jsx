@@ -69,9 +69,6 @@ function LegCard({ leg }) {
 function RaceCard({ race }) {
   return (
     <div className="relative bg-white border border-gray-100 p-8 hover:border-red-200 hover:shadow-md transition-all duration-200">
-      <span className="absolute top-4 right-6 text-5xl font-black text-gray-100 leading-none select-none" aria-hidden="true">
-        {race.num}
-      </span>
       <h3 className="text-lg font-black uppercase text-gray-900 mb-2 tracking-tight">{race.name}</h3>
       {/* red-700 on white = 5.9:1 ✓ (text-xs needs ≥4.5:1) */}
       <p className="text-red-700 text-xs font-bold uppercase tracking-wider mb-4">{race.distances}</p>

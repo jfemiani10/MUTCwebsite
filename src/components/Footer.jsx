@@ -45,7 +45,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Miami University Triathlon Club. All rights reserved.</p>
           <p>Registered with the Office of Student Activities.</p>
         </div>
-        <p className="text-xs text-gray-500 mt-4 text-center">
+        <p className="text-xs text-gray-400 mt-4 text-center">
           Miami University Triathlon Club is a registered student organization and does not represent the official views or positions of Miami University.
         </p>
       </div>

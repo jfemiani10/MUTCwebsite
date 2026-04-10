@@ -43,7 +43,7 @@ export default function AboutPreview() {
             We welcome athletes of all experience levels.
           </p>
 
-          <p className="text-gray-500 leading-relaxed max-w-sm">
+          <p className="text-gray-300 leading-relaxed max-w-sm">
             We compete in USAT Collegiate events throughout the season and provide
             a community for students passionate about endurance sport.
           </p>

@@ -86,7 +86,8 @@ Miami University policy requires all student organization websites to meet WCAG 
 - `text-red-600` (#DC2626) on white = 4.48:1 → **FAILS** for small text. Use `text-red-700` for text-xs/sm labels on white or light backgrounds
 - `text-gray-500` on white = 4.48:1 → **FAILS**. Use `text-gray-600` for body text on white/light backgrounds
 - `text-gray-500` on `bg-gray-50` = 4.26:1 → **FAILS**. Use `text-gray-600`
-- Safe combinations already in use: `text-gray-600` on white (5.74:1 ✓), `text-red-700` on white (5.9:1 ✓), white on black (21:1 ✓), `text-gray-400` on dark backgrounds ✓
+- Safe combinations already in use: `text-gray-600` on white (5.74:1 ✓), `text-red-700` on white (5.9:1 ✓), white on black (21:1 ✓), `text-gray-400` on dark/gray-950 backgrounds ✓, `text-gray-300` on black backgrounds ✓
+- `text-gray-500` on dark backgrounds may still fail depending on the exact computed background — prefer `text-gray-300` or `text-gray-400` on dark sections
 
 **Other requirements:**
 - All decorative images: `alt=""` + `aria-hidden="true"`
