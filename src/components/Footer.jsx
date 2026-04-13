@@ -1,5 +1,4 @@
-import { useNavigate } from 'react-router-dom'
-import logoImg from '../assets/logo.png'
+import logoImg from '../assets/club_logo.png'
 
 export default function Footer() {
   return (
