@@ -7,6 +7,7 @@ const EXEC = [
   { role: 'Vice President',    name: 'Quinn LeBorgne',       email: 'leborgqj@miamioh.edu' },
   { role: 'Safety Officer',    name: 'Kai Lewis',            email: 'lewisar5@miamioh.edu' },
   { role: 'Fundraising Chair', name: 'Jonah Femiani',        email: 'femianjy@miamioh.edu' },
+  { role: 'Social Media Advisor', name: 'Allie Van Stone',  email: 'vanstoam@miamioh.edu' },
 ]
 
 export default function ExecTeamPage() {
