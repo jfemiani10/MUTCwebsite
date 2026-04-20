@@ -1,7 +1,6 @@
 import teamImg from '../assets/team1.jpg'
 
 const EXEC = [
-  { role: 'President',         name: 'Charles Vallone',      email: 'vallonct@miamioh.edu' },
   { role: 'President',         name: 'Zach Turlo',           email: 'turlozb@miamioh.edu' },
   { role: 'Treasurer',         name: 'Rebecca Kolano',       email: 'kolanorr@miamioh.edu' },
   { role: 'Secretary',         name: 'Anton Mueller',        email: 'muelle42@miamioh.edu' },
